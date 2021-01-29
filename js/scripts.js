@@ -1,9 +1,9 @@
-function Pizza (size, toppings) {
+function Pizza (size) {
   this.size = size;
   this.toppings = [];
 }
 Pizza.prototype.countToppings = function() {
-  return Object.keys().length;
+  return this.toppings.length;
 }
 $(document).ready(function() {
   $("form#pizza-order").submit(function(event) {
@@ -13,9 +13,9 @@ $(document).ready(function() {
     $("input:checkbox[name=toppings]:checked").map(function(){
       inputtedToppings.push($(this).val());
     });
-    console.log(inputtedToppings);
-    let userPizza = new Pizza(inputtedSize,inputtedToppings);
-    console.log(userPizza.toppings);
+    let userPizza = new Pizza(inputtedSize);
+    userPizza.toppings = inputtedToppings;
+    console.log(userPizza.countToppings());
     });
     
   });
