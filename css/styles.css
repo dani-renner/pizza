@@ -1,5 +1,14 @@
+h1 {
+  padding-top: 30px;
+}
 body {
   background-color: grey;
+}
+.checkboxes {
+  break-inside: avoid;
+}
+.form-group {
+  column-count: 2;
 }
 .output {
   display: none;
