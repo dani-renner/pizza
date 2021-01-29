@@ -1,3 +1,17 @@
+
+function Orders() {
+  this.pizzas = {};
+  this.currentID = 0;
+};
+Orders.prototype.addPizza = function(pizza) {
+  pizza.id = this.assignID();
+  this.pizzas[pizza.id] = pizza;
+};
+Orders.prototype.assignID = function() {
+  this.currentID += 1;
+  return this.currentID;
+};
+
 function Pizza (size) {
   this.size = size;
   this.toppings = [];
