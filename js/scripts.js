@@ -29,6 +29,7 @@ $(document).ready(function() {
     });
     let userPizza = new Pizza(inputtedSize);
     userPizza.toppings = inputtedToppings;
+    $(".output").show();
     $("#userCost").text(" $"+userPizza.costCalc());
     });    
   });

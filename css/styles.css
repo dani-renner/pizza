@@ -1,0 +1,7 @@
+body {
+  background-color: grey;
+}
+.output {
+  display: none;
+  padding-top: 20px;
+}
