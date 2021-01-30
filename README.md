@@ -37,6 +37,10 @@ This project uses a forms to collect information from the user about what they w
 * Test: calculates a cost based on size & number of toppings
 * Expect: Pizza.costCalc()toEqual(10); if user selects medium & 3 toppings
 
+* Describe: Pizza.printToppings()
+* Test: shows the user which pizza size they ordered with which toppings
+* Expect: Pizza.printToppings()toEqual() medium with cheese,pepperoni
+
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
