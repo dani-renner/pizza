@@ -1,9 +1,6 @@
-function Pizza (size) {
+function Pizza (size, toppings) {
   this.size = size;
-  this.toppings = [];
-};
-Pizza.prototype.countToppings = function() {
-  return this.toppings.length;
+  this.toppings = toppings;
 };
 Pizza.prototype.costCalc = function() {
   let total = 5;
@@ -26,15 +23,13 @@ Pizza.prototype.printToppings = function() {
 };
 
 $(document).ready(function() {
-  $("form#pizza-order").submit(function(event) {
+  $("#pizza-order").submit(function(event) {
     event.preventDefault();
-    const inputtedSize = $("input:radio[name=size]:checked").val();
-    const inputtedToppings = [];
-    $("input:checkbox[name=toppings]:checked").map(function(){
-      inputtedToppings.push($(this).val());
-    });
-    let userPizza = new Pizza(inputtedSize);
-    userPizza.toppings = inputtedToppings;
+    let inputtedSize = $("input:radio[name=size]:checked").val();
+    let inputtedToppings = $("input:checkbox[name=toppings]:checked").map(function(){
+      return this.value;
+    }).get();
+    let userPizza = new Pizza(inputtedSize, inputtedToppings);
     $(".output").show();
     $("#userSize").text(" "+userPizza.size);
     userPizza.printToppings();
