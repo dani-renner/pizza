@@ -1,21 +1,20 @@
 function Pizza (size, toppings) {
   this.size = size;
   this.toppings = toppings;
+  this.price = 5;
 };
 
 Pizza.prototype.costCalc = function() {
-  let total = 5;
   if (this.size === "medium"){
-    total += 2
+    this.price += 2
   }
   else if (this.size === "large"){
-    total += 4;
+    this.price += 4;
   }
-  else {};
   for (i = 0; i < this.toppings.length; i++){
-    total += 1;
+    this.price += 1;
   }
-    return total;
+    return this.price;
 };
 
 Pizza.prototype.printToppings = function() {
