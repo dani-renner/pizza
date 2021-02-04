@@ -29,10 +29,6 @@ This project uses a forms to collect information from the user about what they w
 * Test: creates an object to contain details about the desired pizza
 * Expect: Pizza.toEqual(an Object for pizza size, toppings[]);
 
-* Describe: Pizza.countToppings()
-* Test: uses .length to determine how many toppings user wants
-* Expect: Pizza.countToppings()toEqual(5); if user selects 5 toppings
-
 * Describe: Pizza.costCalc()
 * Test: calculates a cost based on size & number of toppings
 * Expect: Pizza.costCalc()toEqual(10); if user selects medium & 3 toppings

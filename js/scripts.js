@@ -2,6 +2,7 @@ function Pizza (size, toppings) {
   this.size = size;
   this.toppings = toppings;
 };
+
 Pizza.prototype.costCalc = function() {
   let total = 5;
   if (this.size === "medium"){
@@ -16,10 +17,9 @@ Pizza.prototype.costCalc = function() {
   }
     return total;
 };
+
 Pizza.prototype.printToppings = function() {
-  for (i = 0; i < this.toppings.length; i++){
-    $("#userToppings").text(" "+this.toppings);
-  };
+  $("#userToppings").text(" "+this.toppings.join(", "));
 };
 
 $(document).ready(function() {
